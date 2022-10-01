@@ -29,9 +29,10 @@ async def on_message(message):
         return
 
     if ASPEN_TRIGGER in message.content.lower():
-        file_path = os.getcwd() + '/app/img/download.png'
-        file_ = discord.File(file_path)
-        await message.channel.send(file=file_, content="Test")
+        if message.author.id == 435230519735877653:
+            file_path = os.getcwd() + '/app/img/spen.jpeg'
+            file_ = discord.File(file_path)
+            await message.channel.send(file=file_, content="SPEN")
 
     await bot.process_commands(message)
 
